@@ -1,0 +1,49 @@
+/* funfact quote css */
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700');
+
+body {
+	font-family: "Amatic SC", cursive;
+	background-color: lightblue;
+
+}
+
+#funFactDiv {
+	text-align: center;
+	color: darkorange;
+	font-size: 500%;
+	padding: .5em;
+}
+
+.myButton {
+
+	margin: 0 auto;
+	display: block;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: .7rem;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 50px;
+    background-color: rgb(47, 116, 155); /*this is 009de3 */
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.myButton:hover {
+    background-color: rgba(222, 117, 62, 1); /* this is c25921 */
+}
+
+.myButton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+    background-color: rgb(47, 116, 155); /*this is 009de3 */
+}
+
+.myButton:focus {
+    outline:0; /* eliminate chrome highlight box */
+{
