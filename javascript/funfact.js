@@ -7,9 +7,9 @@ switch (myButtonText) {
             myButtonText = "";
             break;
         case "Next Quote":
-            // refresh page
-            // or clear funfact and redo
+            // run the main function again
             myButtonText = "";
+            main();
             break;
         case "Auto-Scroll":
             // activate the timer sub
@@ -135,13 +135,17 @@ function funFact(funFactIndex) {
 
 // =-=-=-=-=-=-=-=-= This is the main procedure =-=-=-=-=-=-=-=-=-=-=-=
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-let funFactIndex = 0;
-funFactIndex = getFunFactIndex(1, 100);
+function main() {
+    let funFactIndex = 0;
+    funFactIndex = getFunFactIndex(1, 100);
 
-let theFunFact = "<p>" + funFact(funFactIndex) + "</p>";
+    let theFunFact = "<p>" + funFact(funFactIndex) + "</p>";
 
-let insertFunFact = document.getElementById('funFactDiv');
-insertFunFact.insertAdjacentHTML("afterbegin", theFunFact);
+    let insertFunFact = document.getElementById('funFactDiv');
+    insertFunFact.insertAdjacentHTML("afterbegin", theFunFact);
+};
+
+main();
 
 document.addEventListener('click', (event) => {
     executeButton(event.target.value);
