@@ -2,30 +2,24 @@
 
 // ------ This function selects button-click action -------------
 function executeButton(myButtonText) { 
-switch (myButtonText) {
-        default:
-            myButtonText = "";
-            break;
-        case "Next Quote":
-            // run the main function again
-            myButtonText = "";
-            main();
-            break;
-        case "Auto-Scroll":
-            // activate the timer sub
-            myButtonText = "";
-            break;
+    switch (myButtonText) {
+            case "Next Quote":
+                myButtonText = "";
+                main();
+                break;
+            default:
+                myButtonText = "";
+                break;
     }
 };
 
-// ------ This function creates a random number between min and max --------
-
+// ------ Returns a random number between min and max --------
 function getFunFactIndex(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// ------ This function holds the fun facts, and returns one of them --------
-function funFact(funFactIndex) {
+// ---- Holds the funfact array and returns the nth funfact --------
+function getFunFact(funFactIndex) {
 
     const funFacts = [
         "Banging your head against a wall for one hour burns 150 calories.",
@@ -136,13 +130,15 @@ function funFact(funFactIndex) {
 // =-=-=-=-=-=-=-=-= This is the main procedure =-=-=-=-=-=-=-=-=-=-=-=
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 function main() {
-    let funFactIndex = 0;
-    funFactIndex = getFunFactIndex(1, 100);
+    
+    let removeFunFact = document.getElementById('funFactDiv');
+    removeFunFact.removeChild(removeFunFact.firstChild);
 
-    let theFunFact = "<p>" + funFact(funFactIndex) + "</p>";
-
+    let funFactIndex = getFunFactIndex(1, 100);
+    let theFunFact = "<p>" + getFunFact(funFactIndex) + "</p>";
     let insertFunFact = document.getElementById('funFactDiv');
     insertFunFact.insertAdjacentHTML("afterbegin", theFunFact);
+    
 };
 
 main();

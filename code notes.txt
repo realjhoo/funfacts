@@ -1,0 +1,28 @@
+ideas that are not quite working
+
+the idea was to create a checkbox such that, when checked, loaded a new quote every five seconds.
+
+Problem.
+
+The procedure has to check the checkbox.
+if not checked do nothing
+if checked, load a new quote, then wait 5 seconds.
+check the status of the checkbox again... if unchecked, do nothing
+If checked, reload the quote
+repeat
+
+SCRAPS
+html
+    <label  for="timer" class="myLabel">See a new fact every 5 seconds</label>
+            <input type="checkbox" class="myButton" id="timer">
+
+js
+   while (document.getElementById("timer").checked){
+        //setInterval(main(), 500);
+    };
+
+    //if (event.target.id == "timer" && factTimer ) {
+    //    console.log("both");
+    //    main();
+    //};
+    
